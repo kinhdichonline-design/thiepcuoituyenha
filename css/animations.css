@@ -1,0 +1,91 @@
+/* ==========================================================================
+   ANIMATIONS & EFFECTS: WEDDING WEBSITE
+   ========================================================================== */
+
+/* Fade In Keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Shimmer Gold Effect */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.shimmer-text {
+  background: linear-gradient(90deg, #dfb842 0%, #fff 50%, #dfb842 100%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 4s infinite;
+}
+
+/* Floating Lanterns / Decor */
+@keyframes floatGentle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.float-anim {
+  animation: floatGentle 4s ease-in-out infinite;
+}
+
+.float-anim-delayed {
+  animation: floatGentle 4s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+/* Sparkle / Heart Burst on Button Click */
+@keyframes burst {
+  0% {
+    transform: scale(0.8);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+/* Progressive Scroll Reveal Utility */
+.reveal-on-scroll {
+  opacity: 1;
+  transform: none;
+  transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+body.js-animate .reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(25px);
+}
+
+body.js-animate .reveal-on-scroll.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Pulse Glow */
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(223, 184, 66, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(223, 184, 66, 0.7);
+  }
+}
+
+.pulse-glow {
+  animation: pulseGlow 3s infinite;
+}
